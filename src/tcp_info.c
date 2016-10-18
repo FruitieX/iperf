@@ -134,11 +134,11 @@ long
 get_snd_cwnd(struct iperf_interval_results *irp)
 {
 #if defined(linux) && defined(TCP_MD5SIG)
-    return irp->tcpInfo.tcpi_snd_cwnd * irp->tcpInfo.tcpi_snd_mss;
+    return irp->tcpInfo.tcpi_snd_cwnd;
 #elif defined(__FreeBSD__) && __FreeBSD_version >= 600000
-    return irp->tcpInfo.tcpi_snd_cwnd * irp->tcpInfo.tcpi_snd_mss;
+    return irp->tcpInfo.tcpi_snd_cwnd;
 #elif defined(__NetBSD__) && defined(TCP_INFO)
-    return irp->tcpInfo.tcpi_snd_cwnd * irp->tcpInfo.tcpi_snd_mss;
+    return irp->tcpInfo.tcpi_snd_cwnd;
 #else
     return -1;
 #endif
@@ -152,11 +152,11 @@ long
 get_snd_ssthresh(struct iperf_interval_results *irp)
 {
 #if defined(linux) && defined(TCP_MD5SIG)
-    return irp->tcpInfo.tcpi_snd_ssthresh * irp->tcpInfo.tcpi_snd_mss;
+    return irp->tcpInfo.tcpi_snd_ssthresh;
 #elif defined(__FreeBSD__) && __FreeBSD_version >= 600000
-    return irp->tcpInfo.tcpi_snd_ssthresh * irp->tcpInfo.tcpi_snd_mss;
+    return irp->tcpInfo.tcpi_snd_ssthresh;
 #elif defined(__NetBSD__) && defined(TCP_INFO)
-    return irp->tcpInfo.tcpi_snd_ssthresh * irp->tcpInfo.tcpi_snd_mss;
+    return irp->tcpInfo.tcpi_snd_ssthresh;
 #else
     return -1;
 #endif
