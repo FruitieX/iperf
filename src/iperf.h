@@ -76,6 +76,7 @@ struct iperf_interval_results
     int interval_retrans;
     int interval_sacks;
     int snd_cwnd;
+    int snd_ssthresh;
     TAILQ_ENTRY(iperf_interval_results) irlistentries;
     void     *custom_data;
     int rtt;
@@ -97,6 +98,7 @@ struct iperf_stream_result
     int stream_sum_rtt;
     int stream_count_rtt;
     int stream_max_snd_cwnd;
+    int stream_max_snd_ssthresh;
     struct timeval start_time;
     struct timeval end_time;
     struct timeval start_time_fixed;
